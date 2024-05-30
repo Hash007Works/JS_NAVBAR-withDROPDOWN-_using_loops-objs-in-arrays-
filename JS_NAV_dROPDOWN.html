@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>loops-for- arrays</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"  />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+ 
+ 
+<body>
+<!-- Navbar started -->
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Ilander</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ms-auto" id="msg">
+
+              <!--  <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                    < /li> 
+            
+            -->
+             
+              
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar
+        
+        <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Courses</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Angular</a></li>
+                  <li><a class="dropdown-item" href="#">React JS</a></li>
+                  <li><a class="dropdown-item" href="#">Node JS</a></li>
+                </ul>
+              </li>
+
+
+        ended -->
+
+<!-- Course list started -->
+
+
+   
+
+<!-- Course list ended -->
+
+
+
+    <script>
+
+    let menu=[
+
+    {
+      name:"Home",
+      url:"index.html",
+      sub:[]
+    },
+    {
+      name:"About",
+      url:"about.html",
+      sub:[]
+    },
+    {
+      name:"Services",
+      url:"services.html",
+      sub:[   
+           
+           {
+             name:"Product",
+             url:"product.html"
+           },
+           {
+             name:"career",
+             url:"career.html"
+           },
+           {
+             name:"Plan",
+             url:"palns.html"
+           }
+          
+          ]
+    },
+    {
+      name:"Blog",
+      url:"blog.html",
+      sub:[]
+    },
+    {
+      name:"Courses",
+      url:"Courses.html",
+      sub:[   
+           
+          {
+            name:"Angular",
+            url:"angular.html"
+          },
+          {
+            name:"Java",
+            url:"java.html"
+          },
+          {
+            name:"HTML",
+            url:"html.html"
+          }
+         
+         ]
+    },
+    {
+      name:"Help",
+      url:"contact.html",
+      sub:[]
+    },
+    {
+      name:"FAQ",
+      url:"faq.html",
+      sub:[]
+    }
+    ]
+
+    let p=""
+    for(let i=0;i<menu.length;i++)
+    {
+      if (menu[i].sub.length === 0) 
+         {
+          p+= `
+              <li class="nav-item">
+                  <a class="nav-link" href="${menu[i].url}">${menu[i].name}</a>
+               </li>
+          
+          `              
+        }
+        else
+        {
+          p+= `
+          <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">${menu[i].name}</a>
+                <ul class="dropdown-menu">`
+
+
+
+              for(let j=0;j<menu[i].sub.length;j++)
+              {
+
+                p+=`  <li><a class="dropdown-item" href="${menu[i].sub[j].url}">${menu[i].sub[j].name}</a></li>   `
+               
+              }           
+                  
+
+
+
+        p+= `</ul>
+               </li>
+          
+            `
+
+        }
+        
+   
+      
+    }
+    document.getElementById("msg").innerHTML=p
+
+
+    </script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    </body>
+</html>
